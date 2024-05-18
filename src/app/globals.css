@@ -2,32 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 30vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.scrolling-background {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/gif/bg_natural_sougen.jpg"); /* 無限スクロールする背景画像 */
+  background-repeat: repeat-x;
+  background-size: contain;
+  /* background-position: 50% 50%; */
+  animation: scrollBackground 10s linear infinite;
+  position: relative;
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 0 0; /* 背景画像の幅に合わせて調整 */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dog {
+  width: 100px;
+  height: 100px;
+  background-image: url("../../public/gif/tekuteku-dog.gif"); /* 歩いている犬のGIF画像 */
+  background-size: cover;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+
+  /* animation: walkDog 5s linear infinite; */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes walkDog {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
   }
 }
