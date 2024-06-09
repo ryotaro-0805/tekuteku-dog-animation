@@ -21,7 +21,7 @@ body {
 
 @keyframes scrollBackground {
   from {
-    background-position: 100vw 0;
+    background-position: -100vw 0;
   }
   to {
     background-position: 0 0; /* 背景画像の幅に合わせて調整 */
@@ -31,7 +31,7 @@ body {
 .dog {
   width: 100px;
   height: 100px;
-  background-image: url("../../public/gif/tekuteku-dog.gif"); /* 歩いている犬のGIF画像 */
+  background-image: url("../../public/gif/tekutekudog.gif"); /* 歩いている犬のGIF画像 */
   background-size: cover;
   position: absolute;
   bottom: 8%;
